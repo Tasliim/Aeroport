@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Aéroport Saint Exupéry</title>
+    <title>Ajout compagnie aérienne</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <!----hero Section start---->
 
     <div class="page1">
         <nav>
@@ -31,51 +30,91 @@
             </ul>
             <a href="#" class="btn">Inscrivez-vous</a>
         </nav>
-
-        <div class="content">
-            <h4>Bonjour,</h4>
-            <h1>prénom <span> nom </span></h1>
-            <!--PHP qui récupere le nom de connexion -->
-            <!--	<div class="newsletter">
-				<form>
-					<input type="email" name="email" id="mail" placeholder="Enter Your Email">
-					<input type="submit" name="submit" value="Lets Start">
-				</form>
-			</div> -->
-        </div>
     </div>
 
 
-    <!-----service section start----------->
-    <div class="service">
-        <div class="title">
-            <h2>Ajouter Avion</h2>
-        </div>
-        <article class="ajouteravion">
-            <php ?>
-                <div class="ajout">
+<?php
+// On traite le formulaire directement dans la page 
+if(!empty($_POST)){
+    // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
+    if(
+        isset($_POST["id_compagnie"], $_POST["nom_compagnie"], $_POST["n_siret"])
+        && !empty($_POST["id_compagnie"]) && !empty($_POST["nom_compagnie"]) && !empty($_POST["n_siret"])
+    ){
+        // Le formulaire est complet
+        // On récupère les données en les protégeants contre les failles XSS
+        // On retire toutes balises du nom_compagnie 
+        $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
+        // On déclare les autres valeurs pour simplifié directement 
+        $id_compagnie=$_POST["id_compagnie"];
+        $n_siret=$_POST["n_siret"];
+        
+        // A présent on peut se permettre de se connecter à la base de données
+        // On se connecte donc à la BDD
+
+        // ------------------------- CONSTANTES -------------------
+
+        // Constantes d'environnement
+        include 'paramBD.php';
+
+
+        //DSN de connexion
+        $dsn='mysql:host='.$host.';port=3306 ; dbname='.$dbname; 
+
+        // On va se connecter à la base 
+        try  {
+
+            // On instancie le PDO 
+         $db=new PDO($dsn, $user, $password);
+
+         // On veut que les données s'envoient en UTF8
+         $db->exec("SET NAMES utf8");
+
+            // On définit le mot de fetchall par défaut 
+            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+
+            }catch(PDOException $e){
+             die("Erreur : ".$e->getMessage());
+            }
+
+        // ------------------------- CONSTANTES -------------------
+
+        $sql="INSERT INTO compagnie_aerienne (id_compagnie, nom_compagnie, n_siret)
+        VALUES (:id_compagnie, :nom_compagnie, :n_siret)";
+
+        // On prépare la requête 
+        $query=$db->prepare($sql);
+
+        // On injecte les valeurs 
+        $query->bindValue(":id_compagnie", $id_compagnie);
+        $query->bindValue(":nom_compagnie", $nom_compagnie);
+        $query->bindValue(":n_siret", $n_siret);
+
+        // On execute la requête 
+        if(
+            !$query->execute()){
+            die("Une erreur est survenue");
+        }
+
+        // On récupère l'ID de la compagnie ajoutée 
+
+        die("Compagnie aérienne ajoutée sous l'id_compagnie $id_compagnie");
+    }else{
+        die("Le formulaire n'a pas été rempli correctement");
+    }
+}
+?>    
+
+    <h3>Ajouter une compagnie</h3>
+
+        <div class="AjouterCA">
                     <form method="post" action="">
                         <input type="number" name="id_compagnie" placeholder="id_compagnie" /><br />
                         <input type="text" name="nom_compagnie" placeholder="nom_compagnie" /><br />
                         <input type="number" name="n_siret" placeholder="n_siret" /><br />
                         <input type="submit" value="OK" />
                     </form>
-
-<?php
-include 'connexionBD.php';
-$title='Afficher avions à remplir';
-
-if(isset($_POST['id_compagnie']) AND isset($_POST['nom_compagnie']) AND isset($ _POST['n_siret']))
-{
-$requete = $bdd->prepare("INSERT INTO compagnie_aerienne (id_compagnie, nom_compagnie, n_siret)
-VALUES (?, ?, ?)");
-
-$requete->execute(array($_POST['id_compagnie'], $_POST['nom_compagnie'], $_POST['n_siret']));
-
-?>
-<?php
-}
-?>
+        </div>
 
 </body>
 
