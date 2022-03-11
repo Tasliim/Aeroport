@@ -1,0 +1,385 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+	text-align: justify;
+	text-justify: inter-word;
+
+}
+
+/*_____________1ERE PAGE___________ */
+
+/*image de fond*/
+.page{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/aeroport.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*image de fond page connexion*/
+.page1{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/iwan-shimko-tCp2K2sYpFg-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+}
+/*espacement du haut */
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 45px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+/*logo à gauche mise en forme */
+.logo{
+	color: white;
+	font-size: 35px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+span{
+	color: rgb(178,30,37);
+}
+/*espacement barre menu haut*/
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px  10px;
+}
+/*mise en forme barre menu */
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+/*hover barre menu */
+nav ul li a:hover{
+	color: rgb(178,30,37);
+	transition: .4s;
+}
+/*bouton inscrivez-vous*/
+.btn{
+	background-color:rgb(178,30,37);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+/*hover btn zoom*/
+.btn:hover{
+	transform: scale(1.2);
+}
+
+.content{
+	position: absolute;
+	top: 50%;
+	left:8%;
+	transform: translateY(-50%);
+}
+/*prénom*/
+h1{
+	color: rgb(255, 255, 255);
+	margin: 20px 0px 20px;
+	font-size: 75px;
+}
+
+/*Il n'y a pas de H3 pour l'instant je crois */
+h3{
+	color: rgb(164, 9, 236);
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+
+/*mise en forme H4 "bonjour"*/
+h4{
+	color: rgb(255, 255, 255);
+	letter-spacing: 2px;
+	font-size: 30px;
+}
+
+/*je sais pas encore ça sert à quoi ? JE CROIS QUE JAI SUPP LE HTML CETAIT PAS UTILE POUR NOUS */
+.newslatter form{
+	width: 380px;
+	max-width: 100%;
+	position: relative;
+}
+
+/*ça non plus*/
+.newslatter form input:first-child{
+	display: inline-block;
+	width: 100%;
+	padding: 14px 130px 14px 15px;
+	border: 2px solid #01afff;
+	outline: none;
+	border-radius: 30px;
+}
+.newslatter form input:last-child{
+	position: absolute;
+	display: inline-block;
+	outline: none;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 30px;
+	background-color:#488800;
+	color: white;
+	box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+	top: 6px;
+	right: 6px; 
+}
+
+/*_____________A PROPOS___________ */
+/*mise en forme */
+.about{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #191919;
+}
+/*image "A propos" */
+.about img{
+	height: auto;
+	width: 430px;
+}
+/*texte */
+.about-text{
+	width: 550px;
+}
+
+.main{
+	width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+/*titre de "A propos" */
+.about-text h2{
+	color: white;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+
+/*sous titre "aeroport"*/
+.about-text h5{
+	color: rgb(178,30,37);
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+}
+/*mise en forme texte "A propos" */
+.about-text p{
+	color: rgb(185, 184, 184);
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 18px;
+	margin-bottom: 45px;
+}
+/*mise en forme bouton */
+button{
+	background-color:rgb(178,30,37);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+/*hover encadré bouton */
+button:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+
+
+/*_____________SERVICES___________ */
+
+.service{
+	background: #101010;
+	width: 100%;
+	padding: 100px 0px;
+}
+/* titre service*/
+.title h2{
+	color: rgb(255, 255, 255);
+	font-size: 75px;
+	width: 1130px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+/* mise en forme carré + carte*/
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+}
+
+.card{
+	height: 365px;
+	width: 335px;
+	padding: 20px 35px;
+	background: #191919;
+	border-radius: 20px;
+	margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*emoticone*/
+.card i{
+	font-size: 50px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+	color: rgb(178,30,37);
+}
+/*titre carte */
+h5{
+	color: rgb(255, 255, 255);
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/*Texte paragraphe carte service */
+.pra p{
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+/*Boutons des services*/
+.card .button{
+	background-color:#6e6e6e;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .button:hover{
+	background-color: transparent;
+	border: 2px solid #c0c0c0;
+	cursor: pointer;
+}
+
+
+/*_____________WEBSITE___________ */
+
+/*mise en page beautiful website */
+.contact-me{
+	width: 100%;
+	height: 290px;
+	background: #191919;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contact-me p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton hire me */
+.contact-me .button-two{
+	background-color:#f9000c;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contact-me .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+
+/*_____________FOOTER___________ */
+/*Mise en page footer */
+footer{
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background: #101010;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Mise en forme titre footer*/
+footer p:nth-child(1){
+	font-size: 30px;
+	color: rgb(139, 139, 139);
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+/*texte footer */
+footer p:nth-child(2){
+	color: rgb(255, 255, 255);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.social{
+	display: flex;
+}
+.social a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgb(178,30,37);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.social a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+/*copyright*/
+.end{
+	position: absolute;
+	color:#d8d8d8;
+	bottom: 35px;
+	font-size: 14px; 
+}
