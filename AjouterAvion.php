@@ -38,19 +38,28 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"], $_POST["nom_compagnie"], 
-        $_POST["n_siret"])
-        && !empty($_POST["id_compagnie"]) && !empty($_POST["nom_compagnie"]) 
-        && !empty($_POST["n_siret"])
+        isset($_POST["n_avion"], $_POST["id_piste"], $_POST["nombre_places"], $_POST["type_avion"], 
+        $_POST["capacite_chargement"], $_POST["capacite_reservoir"], 
+        $_POST["envergure"], $_POST["longueur"], $_POST["hauteur"])
+        && !empty($_POST["n_avion"]) && !empty($_POST["id_piste"]) && !empty($_POST["nombre_places"]) 
+        && !empty($_POST["type_avion"]) && !empty($_POST["capacite_chargement"]) && !empty($_POST["capacite_reservoir"]) 
+        && !empty($_POST["envergure"]) && !empty($_POST["longueur"]) && !empty($_POST["hauteur"])
     ){
         // Le formulaire est complet
-        // On récupère les données en les protégeants contre les failles XSS
-        // On retire toutes balises du nom_compagnie 
-        $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
         // On déclare les autres valeurs pour simplifié directement 
-        $id_compagnie=$_POST["id_compagnie"];
-        $n_siret=$_POST["n_siret"];
-        
+        // On retire toutes balises du type_avion
+        $type_avion=strip_tags($_POST["type_avion"]);
+        // On déclare les autres valeurs pour simplifié directement 
+        $n_avion=$_POST["n_avion"];
+        $id_piste=$_POST["id_piste"];
+        $nombre_places=$_POST["nombre_places"];
+        $type_avion=$_POST["type_avion"];
+        $capacite_chargement=$_POST["capacite_chargement"];
+        $capacite_reservoir=$_POST["capacite_reservoir"];
+        $envergure=$_POST["envergure"];
+        $longueur=$_POST["longueur"];
+        $hauteur=$_POST["hauteur"];
+
         // A présent on peut se permettre de se connecter à la base de données
         // On se connecte donc à la BDD
 
@@ -81,16 +90,24 @@ if(!empty($_POST)){
 
         // ------------------------- CONSTANTES -------------------
 
-        $sql="INSERT INTO compagnie_aerienne
-        VALUES (:id_compagnie, :nom_compagnie, :n_siret)";
+        $sql="INSERT INTO avion 
+        VALUES (:n_avion, :id_piste, :nombre_places, :type_avion,
+                :capacite_chargement, :capacite_reservoir, :envergure, 
+                :longueur, :hauteur)";
 
         // On prépare la requête 
         $query=$db->prepare($sql);
 
         // On injecte les valeurs 
-        $query->bindValue(":id_compagnie", $id_compagnie);
-        $query->bindValue(":nom_compagnie", $nom_compagnie);
-        $query->bindValue(":n_siret", $n_siret);
+        $query->bindValue(":n_avion", $n_avion);
+        $query->bindValue(":id_piste", $id_piste);
+        $query->bindValue(":nombre_places", $nombre_places);
+        $query->bindValue(":type_avion", $type_avion);
+        $query->bindValue(":capacite_chargement", $capacite_chargement);
+        $query->bindValue(":capacite_reservoir", $capacite_reservoir);
+        $query->bindValue(":envergure", $envergure);
+        $query->bindValue(":longueur", $longueur);
+        $query->bindValue(":hauteur", $hauteur);
 
         // On execute la requête 
         if(
@@ -100,20 +117,26 @@ if(!empty($_POST)){
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("Compagnie aérienne ajoutée sous l'id_compagnie $id_compagnie");
+        die("Avion ajouté sous le numéro $n_avion");
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
 }
 ?>    
 
-    <h3>Ajouter une compagnie</h3>
+    <h3>Ajouter un avion</h3>
 
-        <div class="AjouterCA">
+        <div class="AjouterAvi">
                     <form method="post" action="">
-                        <input type="number" name="id_compagnie" placeholder="id_compagnie" /><br />
-                        <input type="text" name="nom_compagnie" placeholder="nom_compagnie" /><br />
-                        <input type="number" name="n_siret" placeholder="n_siret" /><br />
+                        <input type="number" name="n_avion" placeholder="n_avion" /><br />
+                        <input type="number" name="id_piste" placeholder="id_piste" /><br />
+                        <input type="number" name="nombre_places" placeholder="nombre_places" /><br />
+                        <input type="text" name="type_avion" placeholder="type_avion" /><br />
+                        <input type="number" name="capacite_chargement" placeholder="capacite_chargement" /><br />
+                        <input type="number" name="capacite_reservoir" placeholder="capacite_reservoir" /><br />
+                        <input type="number" name="envergure" placeholder="envergure" /><br />
+                        <input type="number" name="longueur" placeholder="longueur" /><br />
+                        <input type="number" name="hauteur" placeholder="hauteur" /><br />
                         <input type="submit" value="OK" />
                     </form>
         </div>
