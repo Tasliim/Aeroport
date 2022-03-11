@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Connexion</title>
 </head>
 
