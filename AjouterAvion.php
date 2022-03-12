@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Ajout compagnie aérienne</title>
+    <title>Ajout nouvel avion</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -112,7 +112,7 @@ if(!empty($_POST)){
         // On execute la requête 
         if(
             !$query->execute()){
-            die("Une erreur est survenue");
+            die("Une erreur est survenue, vérifier que ce numéro d'avion n'a pas déjà été ajouté");
         }
 
         // On récupère l'ID de la compagnie ajoutée 
