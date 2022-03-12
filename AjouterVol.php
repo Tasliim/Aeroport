@@ -126,7 +126,7 @@ require_once "connect.php";
 
         // On récupère le numéro du vol ajouté
 
-        die("Vol ajouté sous le numéro $n_vol");
+        echo "Vol ajouté sous le numéro $n_vol";
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }

@@ -32,7 +32,7 @@
         </nav>
     </div>
 
-
+<br />
 <?php
 // On traite le formulaire directement dans la page 
 if(!empty($_POST)){
@@ -106,7 +106,7 @@ require_once "connect.php";
 
         // On récupère le numéro de l'avion ajouté
 
-        die("Avion ajouté sous le numéro $n_avion");
+        echo "Avion ajouté sous le numéro $n_avion";
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
