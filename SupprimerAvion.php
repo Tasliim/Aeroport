@@ -38,25 +38,25 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"])
-        && !empty($_POST["id_compagnie"])
+        isset($_POST["n_avion"])
+        && !empty($_POST["n_avion"])
     ){
         // Le formulaire est complet
         // On déclare les autres valeurs pour simplifié directement 
-        $id_compagnie=$_POST["id_compagnie"];
+        $n_avion=$_POST["n_avion"];
         
 // A présent on peut se permettre de se connecter à la base de données
 require_once "connect.php";
 
         // On écrit la requête 
-        $sql=("DELETE FROM compagnie_aerienne 
-        WHERE id_compagnie = :id_compagnie");
+        $sql=("DELETE FROM avion 
+        WHERE n_avion = :n_avion");
 
         // On prépare la requête 
         $query=$db->prepare($sql);
 
         // On injecte les valeurs 
-        $query->bindValue(":id_compagnie", $id_compagnie);
+        $query->bindValue(":n_avion", $n_avion);
 
         // On execute la requête 
         if(
@@ -66,18 +66,18 @@ require_once "connect.php";
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("Compagnie aérienne $id_compagnie  a bien été supprimée");
+        die("L'avion $n_avion a bien été supprimée");
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
 }
 ?>    
 
-    <h3>Supprimer une compagnie</h3>
+    <h3>Supprimer un avion existant</h3>
 
-        <div class="SupprimerCA">
+        <div class="SupprimerAvi">
                     <form method="post" action="">
-                        <input type="number" name="id_compagnie" placeholder="id_compagnie" /><br />
+                        <input type="number" name="n_avion" placeholder="n_avion" /><br />
                         <input type="submit" value="OK" />
                     </form>
         </div>
