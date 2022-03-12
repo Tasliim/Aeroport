@@ -66,7 +66,7 @@ require_once "connect.php";
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("L'avion $n_avion a bien été supprimée");
+        echo "L'avion $n_avion a bien été supprimée";
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
@@ -81,7 +81,12 @@ require_once "connect.php";
                         <input type="submit" value="OK" />
                     </form>
         </div>
+    
+        <br /><br />
 
+    <a href=AjouterVol.php>Ajouter un nouveau vol</a>
+    <a href=AfficherVol.php>Afficher les vols existants</a>
+    <br/><br/>
 </body>
 
 </html>

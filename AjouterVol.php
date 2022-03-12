@@ -153,6 +153,13 @@ require_once "connect.php";
                         <input type="submit" value="OK" />
                     </form>
         </div>
+            
+    <br /><br />
+
+    <a href=SupprimerVol.php>Supprimer un vol existant</a>
+    <a href=AfficherVol.php>Afficher les vols existants</a>
+    <br/><br/>
+
 
 </body>
 
