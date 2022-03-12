@@ -49,11 +49,11 @@
     <div class="colonnegauche">
         <img class="logo" src="Photos/logo.png">
         <ul class="menug">
-            <li class="acc"><a href="Accueil.html">Accueil</a></li><br />
-            <li><a href="GestionAvion.html">Gestion Avion</a></li><br />
-            <li><a href="GestionEmplacement.html">Gestion Emplacement</a></li><br />
-            <li><a href="GestionKerozene.html">Gestion Kérozène</a></li><br />
-            <li><a href="Contact.html">Contact</a></li>
+            <li class="acc"><a href="Accueil.php">Accueil</a></li><br />
+            <li><a href="GestionAvion.php">Gestion Avion</a></li><br />
+            <li><a href="GestionEmplacement.php">Gestion Emplacement</a></li><br />
+            <li><a href="GestionKerozene.php">Gestion Kérozène</a></li><br />
+            <li><a href="Contact.php">Contact</a></li>
         </ul>
     </div>
 
