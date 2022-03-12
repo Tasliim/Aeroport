@@ -32,7 +32,7 @@
         </nav>
     </div>
 
-
+<br />
 <?php
 // On traite le formulaire directement dans la page 
 if(!empty($_POST)){
@@ -78,7 +78,7 @@ require_once "connect.php";
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("Compagnie aérienne ajoutée sous l'id_compagnie $id_compagnie");
+        echo "Compagnie aérienne ajoutée sous l'id compagnie $id_compagnie";
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
