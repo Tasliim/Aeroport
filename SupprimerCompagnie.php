@@ -38,49 +38,17 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"], $_POST["nom_compagnie"], 
-        $_POST["n_siret"])
-        && !empty($_POST["id_compagnie"]) && !empty($_POST["nom_compagnie"]) 
-        && !empty($_POST["n_siret"])
+        isset($_POST["id_compagnie"])
+        && !empty($_POST["id_compagnie"])
     ){
         // Le formulaire est complet
-        // On récupère les données en les protégeants contre les failles XSS
-        // On retire toutes balises du nom_compagnie 
-        $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
         // On déclare les autres valeurs pour simplifié directement 
         $id_compagnie=$_POST["id_compagnie"];
-        $n_siret=$_POST["n_siret"];
         
-        // A présent on peut se permettre de se connecter à la base de données
-        // On se connecte donc à la BDD
+// A présent on peut se permettre de se connecter à la base de données
+require_once "connect.php";
 
-        // ------------------------- CONSTANTES -------------------
-
-        // Constantes d'environnement
-        include 'paramBD.php';
-
-
-        //DSN de connexion
-        $dsn='mysql:host='.$host.';port=3306 ; dbname='.$dbname; 
-
-        // On va se connecter à la base 
-        try  {
-
-            // On instancie le PDO 
-         $db=new PDO($dsn, $user, $password);
-
-         // On veut que les données s'envoient en UTF8
-         $db->exec("SET NAMES utf8");
-
-            // On définit le mot de fetchall par défaut 
-            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-
-            }catch(PDOException $e){
-             die("Erreur : ".$e->getMessage());
-            }
-
-        // ------------------------- CONSTANTES -------------------
-
+        // On écrit la requête 
         $sql="DELETE FROM compagnie_aerienne 
         WHERE id_compagnie = :id_compagnie)";
 
@@ -98,7 +66,7 @@ if(!empty($_POST)){
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("Compagnie aérienne $id_compagnie supprimée");
+        die("Compagnie aérienne $id_compagnie  a bien été supprimée");
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
