@@ -44,7 +44,7 @@
 	</div>
 
 <?php 
-// On va cherchdr les avions dans la BDD 
+// On va cherchdr les compagnies aériennes dans la BDD 
 // On se connecte donc à la BDD
 require_once "connect.php";
 

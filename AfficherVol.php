@@ -107,6 +107,6 @@ echo'</table></div>';
 
 <br /><br />
 
-<a href=AjouterAvion.php>Ajouter un nouvel avion</a>
-<a href=SupprimerAvion.php>Supprimer un avion existant</a>
+<a href=AjouterVol.php>Ajouter un nouveau vol</a>
+<a href=SupprimerVol.php>Supprimer un vol existant</a>
 <br/><br/>

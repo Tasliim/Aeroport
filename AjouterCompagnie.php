@@ -38,9 +38,11 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"], $_POST["nom_compagnie"], 
+        isset($_POST["id_compagnie"],
+        $_POST["nom_compagnie"], 
         $_POST["n_siret"])
-        && !empty($_POST["id_compagnie"]) && !empty($_POST["nom_compagnie"]) 
+        && !empty($_POST["id_compagnie"]) 
+        && !empty($_POST["nom_compagnie"]) 
         && !empty($_POST["n_siret"])
     ){
         // Le formulaire est complet
@@ -56,6 +58,7 @@ if(!empty($_POST)){
 
 require_once "connect.php";
 
+        // On déclare notre requête 
         $sql="INSERT INTO compagnie_aerienne
         VALUES (:id_compagnie, :nom_compagnie, :n_siret)";
 

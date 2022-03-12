@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Ajout nouvel avion</title>
+    <title>Ajout un avion</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,15 +38,28 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["n_avion"], $_POST["id_piste"], $_POST["nombre_places"], $_POST["type_avion"], 
-        $_POST["capacite_chargement"], $_POST["capacite_reservoir"], 
-        $_POST["envergure"], $_POST["longueur"], $_POST["hauteur"])
-        && !empty($_POST["n_avion"]) && !empty($_POST["id_piste"]) && !empty($_POST["nombre_places"]) 
-        && !empty($_POST["type_avion"]) && !empty($_POST["capacite_chargement"]) && !empty($_POST["capacite_reservoir"]) 
-        && !empty($_POST["envergure"]) && !empty($_POST["longueur"]) && !empty($_POST["hauteur"])
+        isset($_POST["n_avion"],
+        $_POST["id_piste"], 
+        $_POST["nombre_places"], 
+        $_POST["type_avion"], 
+        $_POST["capacite_chargement"], 
+        $_POST["capacite_reservoir"], 
+        $_POST["envergure"], 
+        $_POST["longueur"], 
+        $_POST["hauteur"])
+        && !empty($_POST["n_avion"]) 
+        && !empty($_POST["id_piste"]) 
+        && !empty($_POST["nombre_places"]) 
+        && !empty($_POST["type_avion"]) 
+        && !empty($_POST["capacite_chargement"]) 
+        && !empty($_POST["capacite_reservoir"]) 
+        && !empty($_POST["envergure"]) 
+        && !empty($_POST["longueur"]) 
+        && !empty($_POST["hauteur"])
     ){
         // Le formulaire est complet
         // On déclare les autres valeurs pour simplifié directement 
+        // On récupère les données en les protégeants contre les failles XSS
         // On retire toutes balises du type_avion
         $type_avion=strip_tags($_POST["type_avion"]);
         // On déclare les autres valeurs pour simplifié directement 
@@ -65,6 +78,7 @@ if(!empty($_POST)){
 
 require_once "connect.php";
 
+        // On déclare notre requête 
         $sql="INSERT INTO avion 
         VALUES (:n_avion, :id_piste, :nombre_places, :type_avion,
                 :capacite_chargement, :capacite_reservoir, :envergure, 
@@ -90,7 +104,7 @@ require_once "connect.php";
             die("Une erreur est survenue, vérifier que ce numéro d'avion n'a pas déjà été ajouté");
         }
 
-        // On récupère l'ID de la compagnie ajoutée 
+        // On récupère le numéro de l'avion ajouté
 
         die("Avion ajouté sous le numéro $n_avion");
     }else{
