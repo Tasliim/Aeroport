@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Ajout compagnie aérienne</title>
+    <title>Supprimer une compagnie aérienne</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,59 +38,25 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"], $_POST["nom_compagnie"], 
-        $_POST["n_siret"])
-        && !empty($_POST["id_compagnie"]) && !empty($_POST["nom_compagnie"]) 
-        && !empty($_POST["n_siret"])
+        isset($_POST["id_compagnie"])
+        && !empty($_POST["id_compagnie"])
     ){
         // Le formulaire est complet
-        // On récupère les données en les protégeants contre les failles XSS
-        // On retire toutes balises du nom_compagnie 
-        $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
         // On déclare les autres valeurs pour simplifié directement 
         $id_compagnie=$_POST["id_compagnie"];
-        $n_siret=$_POST["n_siret"];
         
-        // A présent on peut se permettre de se connecter à la base de données
-        // On se connecte donc à la BDD
+// A présent on peut se permettre de se connecter à la base de données
+require_once "connect.php";
 
-        // ------------------------- CONSTANTES -------------------
-
-        // Constantes d'environnement
-        include 'paramBD.php';
-
-
-        //DSN de connexion
-        $dsn='mysql:host='.$host.';port=3306 ; dbname='.$dbname; 
-
-        // On va se connecter à la base 
-        try  {
-
-            // On instancie le PDO 
-         $db=new PDO($dsn, $user, $password);
-
-         // On veut que les données s'envoient en UTF8
-         $db->exec("SET NAMES utf8");
-
-            // On définit le mot de fetchall par défaut 
-            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-
-            }catch(PDOException $e){
-             die("Erreur : ".$e->getMessage());
-            }
-
-        // ------------------------- CONSTANTES -------------------
-
-        $sql="INSERT INTO compagnie_aerienne
-        VALUES (:id_compagnie, :nom_compagnie, :n_siret)";
+        // On écrit la requête 
+        $sql=("DELETE FROM compagnie_aerienne 
+        WHERE id_compagnie = :id_compagnie");
 
         // On prépare la requête 
         $query=$db->prepare($sql);
 
         // On injecte les valeurs 
         $query->bindValue(":id_compagnie", $id_compagnie);
-        $query->bindValue(":nom_compagnie", $nom_compagnie);
-        $query->bindValue(":n_siret", $n_siret);
 
         // On execute la requête 
         if(
@@ -100,20 +66,18 @@ if(!empty($_POST)){
 
         // On récupère l'ID de la compagnie ajoutée 
 
-        die("Compagnie aérienne ajoutée sous l'id_compagnie $id_compagnie");
+        die("Compagnie aérienne $id_compagnie  a bien été supprimée");
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
 }
 ?>    
 
-    <h3>Ajouter une compagnie</h3>
+    <h3>Supprimer une compagnie</h3>
 
-        <div class="AjouterCA">
+        <div class="SupprimerCA">
                     <form method="post" action="">
                         <input type="number" name="id_compagnie" placeholder="id_compagnie" /><br />
-                        <input type="text" name="nom_compagnie" placeholder="nom_compagnie" /><br />
-                        <input type="number" name="n_siret" placeholder="n_siret" /><br />
                         <input type="submit" value="OK" />
                     </form>
         </div>

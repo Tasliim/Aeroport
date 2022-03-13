@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Aéroport Saint Exupéry</title>
+	<title>Afficher avion</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-	<!----hero Section start---->
 
 	<div class="page">
 		<nav>
@@ -43,33 +42,33 @@
 			</div> -->
 		</div>
 	</div>
-<?php
-include 'connexionBD.php';
-$title='Afficher avions à remplir';
 
+<?php 
+// On va chercher les avions dans la BDD 
+// On se connecte donc à la BDD
+require_once "connect.php";
 
+// On écrit la requête 
+$sql="SELECT * FROM avion ORDER BY n_avion ASC";
 
+// On execute la requête directement car pas de paramètres extérieurs qui vient s'ajouter 
+$query=$db->query($sql);
+
+// On récupère les données 
+$avion=$query->fetchall();
 ?>
 
-<br/><br/>
-<h3>Liste des avions</h3>
+<h1>Liste des avions</h1>
 <a href=accueil.php >Retour</a>
 <br/><br/>
+
 
 <?php
 echo '<div class="container table-responsive">';
 echo '<table class="table table-striped">';
 
-
-$reqAfficheAvion="SELECT n_avion, id_piste, nombre_places, type_avion, capacite_chargement, capacite_reservoir, envergure, longueur, hauteur, surface_filaire
-FROM avion 
-order by n_avion";
-
-$reponse=$pdo->query($reqAfficheAvion);
-$data = $reponse->fetchAll(PDO::FETCH_OBJ);  // requete pour recuperer login nom et prenom
-
 echo 
-"<tr style=font-weight:bold>
+"<tr>
 <td>Numéro avion</td>
 <td>id piste</td>
 <td>Nombres places</td>
@@ -81,7 +80,8 @@ echo
 <td>Hauteur</td>
 </tr>";
 
-foreach ($data as $avion) {
+// Après un fetchall il y a une boucle, on utilise donc une boucle for each
+foreach ($avion as $avion) {
 	echo '<tr>';
 	echo '<td>'.$avion->n_avion.'</td>';
 	echo '<td>'.$avion->id_piste.'</td>';
@@ -92,13 +92,13 @@ foreach ($data as $avion) {
 	echo '<td>'.$avion->envergure.'</td>';
 	echo '<td>'.$avion->longueur.'</td>'; 
 	echo '<td>'.$avion->hauteur.'</td>'; 
-
-
-
 }
 
 echo'</table></div>';
-
 ?>
 
+<br /><br />
+
+<a href=AjouterAvion.php>Ajouter un nouvel avion</a>
+<a href=SupprimerAvion.php>Supprimer un avion existant</a>
 <br/><br/>
