@@ -5,28 +5,27 @@
 	box-sizing: border-box;
 	text-align: justify;
 	text-justify: inter-word;
-
 }
 
-/*_____________1ERE PAGE___________ */
+.lien{
+	background-color:rgba(255, 255, 255, 0);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+}
+
+/*__________________________PAGE ACCUEIL___________________ */
 
 /*image de fond*/
 .page{
 	height: 100vh;
 	width: 100%;
-	background-image: url(../img/aeroport.jpg);
+	background-image:url(../img/airport-AdobeStock_271782927.jpg);
 	background-size: cover;
 	background-position: center;
 }
 
-/*image de fond page connexion*/
-.page1{
-	height: 100vh;
-	width: 100%;
-	background-image: url(../img/iwan-shimko-tCp2K2sYpFg-unsplash.jpg);
-	background-size: cover;
-	background-position: center;
-}
 /*espacement du haut */
 nav{
 	display: flex;
@@ -37,7 +36,7 @@ nav{
 	padding-right: 8%;
 }
 
-/*logo à gauche mise en forme */
+/*logo 'ST EXUPERY' à gauche mise en forme */
 .logo{
 	color: white;
 	font-size: 35px;
@@ -47,28 +46,10 @@ nav{
 span{
 	color: rgb(178,30,37);
 }
-/*espacement barre menu haut*/
-nav ul li{
-	list-style-type: none;
-	display: inline-block;
-	padding: 10px  10px;
-}
-/*mise en forme barre menu */
-nav ul li a{
-	color: white;
-	text-decoration: none;
-	font-weight: bold;
-	text-transform: capitalize;
-}
 
-/*hover barre menu */
-nav ul li a:hover{
-	color: rgb(178,30,37);
-	transition: .4s;
-}
 /*bouton inscrivez-vous*/
 .btn{
-	background-color:rgb(178,30,37);
+	background-color:rgb(30, 156, 178);
 	color: white;
 	text-decoration: none;
 	border: 2px solid transparent;
@@ -88,35 +69,1155 @@ nav ul li a:hover{
 	left:8%;
 	transform: translateY(-50%);
 }
-/*prénom*/
+
+
+/*----------OPTIONS AG/AERP/MANU ACCUEIL---------- */
+
+/* mise en forme carré + carte*/
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 900px;
+}
+
+.card{
+	height: 270px;
+	width: 335px;
+	padding: 5px 35px;
+	background: rgba(73, 73, 73, 0.8);
+	border-radius: 20px;
+	margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*positionnement, taille emoticone*/
+.card i{
+	font-size: 50px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+}
+
+/*Texte paragraphe carte */
+.pra p{
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+
+/*--Carte AGENT--*/
+/*titre carte */
+h5{
+	color: #f685c9;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* Carte Agent + bouton + hoover */
+.card .buttonA{
+	background-color:#f685c9;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonA:hover{
+	background-color: transparent;
+	border: 2px solid #f685c9;
+	cursor: pointer;
+}
+
+
+/*--Carte AEROPORT--*/
+/*titre carte */
+h6{
+	color: #747ceb;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* Carte Aeroport + bouton + hoover */
+.card .buttonE{
+	background-color:#747ceb;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonE:hover{
+	background-color: transparent;
+	border: 2px solid #747ceb;
+	cursor: pointer;
+}
+
+/*--Carte MANUTENTION--*/
+/*titre carte */
+h7{
+	font-weight: bold;
+	color: #0a72af;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+/* Carte Manutention + bouton + hoover */
+.card .buttonM{
+	background-color:#0a72af;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonM:hover{
+	background-color: transparent;
+	border: 2px solid #0a72af;
+	cursor: pointer;
+}
+/*--------------------------------------------------*/
+
+
+
+/*----------CONTACT ACCUEIL---------- */
+
+/*mise en page box Contact */
+.contact{
+	width: 100%;
+	height: 200px;
+	background: #292929;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contact p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton 'contactez-nous' */
+.contact .button-two{
+	background-color:#585858;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contact .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+
+
+/*----------FOOTER ACCUEIL----------*/
+/*Mise en page footer */
+.footer1{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: #181818;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Mise en forme titre footer*/
+.footer1 p:nth-child(1){
+	font-size: 30px;
+	color: rgb(139, 139, 139);
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+/*texte footer */
+.footer1 p:nth-child(1){
+	color: rgba(34, 151, 180, 0.863);
+}
+
+.footer1 p:nth-child(2){
+	color: rgba(163, 219, 233, 0.685);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.social1{
+	display: flex;
+}
+.social1 a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgba(41, 189, 226, 0.685);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.social1 a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+
+/*copyright*/
+.end1{
+	position: absolute;
+	color:#666666;
+	bottom: 35px;
+	font-size: 14px; 
+}
+/*--------------------------------------------------*/
+/*_______________________________________________________*/
+
+
+
+
+/*__________________________PAGE CONNEXION AGENT ___________________ */
+
+/*image de fond page connexion*/
+.pageA{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/airports-02.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*bouton retour*/
+.btnA{
+	background-color:rgb(115, 126, 149);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+/*hover btnA zoom*/
+.btnA:hover{
+	transform: scale(1.2);
+}
+
+.content{
+	position: absolute;
+	top: 50%;
+	left:8%;
+	transform: translateY(-50%);
+}
+/*---------------------------------------*/
+
+
+/*----------CONTENU CONEX INSCR AGENT----------*/
+
+/* mise en forme carré + carte*/
+.boxA{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 900px;
+
+}
+
+.cardA{
+	height: 170px;
+	width: 335px;
+	padding: 20px 20px;
+	background: rgba(73, 104, 145, 0.856);
+	border-radius: 20px;
+	margin: 55px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+
+/*--Carte SE CONNECTER --*/
+/*titre carte */
+.tA{
+
+	color: rgb(21, 56, 88);
+	font-size: 28px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/*----------------------------------------*/
+
+
+/*----------CONTACT AGENT---------- */
+/*mise en page box Contact */
+.contactA{
+	width: 100%;
+	height: 200px;
+	background: rgb(58, 83, 116);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contactA p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton 'contactez-nous' */
+.contactA .button-two{
+	background-color:rgb(61, 62, 75);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contactA .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+
+
+/*----------FOOTER AGENT----------*/
+/*Mise en page footer */
+.footerA{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: rgb(42, 59, 82);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Mise en forme titre footer*/
+.footerA p:nth-child(1){
+	font-size: 30px;
+	color: rgb(139, 139, 139);
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+/*texte footer */
+.footerA p:nth-child(1){
+	color: rgb(99, 144, 202);
+}
+
+.footerA p:nth-child(2){
+	color: rgba(142, 171, 209, 0.808);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.socialA{
+	display: flex;
+}
+.socialA a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgb(99, 144, 202);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.socialA a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+
+/*copyright*/
+.endA{
+	position: absolute;
+	color:rgb(34, 37, 43);
+	bottom: 35px;
+	font-size: 14px; 
+}
+/*--------------------------------------------------*/
+/*_______________________________________________________*/
+
+
+/*__________________________PAGE CONNEXION AEROPORT___________________ */
+
+/*image de fond page connexion*/
+.pageE{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/violet.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*bouton retour*/
+.btnE{
+	background-color:rgb(135, 115, 149);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+/*hover btnC zoom*/
+.btnE:hover{
+	transform: scale(1.2);
+}
+
+.content{
+	position: absolute;
+	top: 50%;
+	left:8%;
+	transform: translateY(-50%);
+}
+/*---------------------------------------*/
+
+
+/*----------CONTENU CONEX INSCR AEROPORT----------*/
+
+/* mise en forme carré + carte*/
+.boxE{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 900px;
+
+}
+
+.cardE{
+	height: 170px;
+	width: 335px;
+	padding: 20px 20px;
+	background: rgba(145, 73, 123, 0.856);
+	border-radius: 20px;
+	margin: 55px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*positionnement, taille emoticone*/
+.cardE i{
+	font-size: 50px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+}
+
+/*Texte paragraphe carte */
+.pra p{
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+
+/*--Carte SE CONNECTER --*/
+/*titre carte */
+.tE{
+	color: rgb(94, 48, 80);
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* Carte Se connecter + bouton + hoover */
+.cardE .buttonA{
+	background-color:#f685c9;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.cardE .buttonA:hover{
+	background-color: transparent;
+	border: 2px solid #f685c9;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+/*----------CONTACT AEROPORT---------- */
+/*mise en page box Contact */
+.contactE{
+	width: 100%;
+	height: 200px;
+	background: rgba(126,102,112);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contactE p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton 'contactez-nous' */
+.contactE .button-two{
+	background-color:rgb(75, 61, 67);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contactE .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+/*----------FOOTER AEROPORT----------*/
+/*Mise en page footer */
+.footerE{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: rgb(95, 77, 85);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Mise en forme titre footer*/
+footer p:nth-child(1){
+	font-size: 30px;
+	color: rgb(139, 139, 139);
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+/*texte footer */
+footer p:nth-child(1){
+	color: rgb(160, 57, 100);
+}
+
+footer p:nth-child(2){
+	color: rgba(192, 93, 134, 0.808);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.social{
+	display: flex;
+}
+.social a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgba(160, 57, 100);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.social a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+
+/*copyright*/
+.end{
+	position: absolute;
+	color:rgb(43, 34, 38);
+	bottom: 35px;
+	font-size: 14px; 
+}
+/*--------------------------------------------------*/
+/*_______________________________________________________*/
+
+
+/*__________________________PAGE CONNEXION MANUTENTIONNAIRE___________________ */
+
+/*image de fond page connexion*/
+.pageM{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../img/luggage-loading-plane-cr-getty.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*bouton retour*/
+.btnM{
+	background-color:rgb(104, 103, 103);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+/*hover btn zoom*/
+.btnM:hover{
+	transform: scale(1.2);
+}
+
+.content{
+	position: absolute;
+	top: 50%;
+	left:8%;
+	transform: translateY(-50%);
+}
+/*---------------------------------------*/
+
+
+/*----------CONTENU CONEX INSCR MANU----------*/
+
+/* mise en forme carré + carte*/
+.boxM{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 900px;
+
+}
+
+.cardM{
+	height: 170px;
+	width: 335px;
+	padding: 20px 20px;
+	background: rgba(116, 116, 116, 0.856);
+	border-radius: 20px;
+	margin: 55px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*--Carte SE CONNECTER --*/
+/*titre carte */
+.tM{
+	color: rgb(49, 49, 49);
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/*----------------------------------------*/
+
+/*----------CONTACT MANU---------- */
+/*mise en page box Contact */
+.contactM{
+	width: 100%;
+	height: 200px;
+	background: rgb(116, 116, 116);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contactM p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton 'contactez-nous' */
+.contactM .button-two{
+	background-color:rgb(70, 70, 70);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contactM .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+/*----------FOOTER MANU----------*/
+/*Mise en page footer */
+.footerM{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: rgb(87, 87, 87);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*texte footer */
+.footerM p:nth-child(1){
+	color: rgb(0, 25, 63);
+}
+
+.footerM p:nth-child(2){
+	color: rgba(2, 45, 110, 0.808);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.socialM{
+	display: flex;
+}
+.socialM a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgb(0, 25, 63);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.socialM a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+
+/*copyright*/
+.endM{
+	position: absolute;
+	color:rgb(34, 37, 43);
+	bottom: 35px;
+	font-size: 14px; 
+}
+/*--------------------------------------------------*/
+/*_______________________________________________________*/
+
+/*__________________________PAGE AFFICHER AVION___________________ */
+
+/*image de fond*/
+.pageAfA{
+	height: 100vh;
+	width: 100%;
+	background-image:url(../img/plane.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*espacement du haut */
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 45px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+/*logo 'ST EXUPERY' à gauche mise en forme */
+.logo{
+	color: white;
+	font-size: 35px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+span{
+	color: rgb(178,30,37);
+}
+
+/*bouton retour*/
+.btnAfA{
+	background-color:rgb(94, 140, 170);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+/*hover btn zoom*/
+.btnAfA:hover{
+	transform: scale(1.2);
+}
+.content{
+	position: absolute;
+	top: 50%;
+	left:8%;
+	transform: translateY(-50%);
+}
+
+
+/*----------OPTIONS AFFICHAGE ----------*/
+
+/* mise en forme carré + carte
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 900px;
+}
+
+.card{
+	height: 270px;
+	width: 335px;
+	padding: 5px 35px;
+	background: rgba(73, 73, 73, 0.8);
+	border-radius: 20px;
+	margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+/*positionnement, taille emoticone
+.card i{
+	font-size: 50px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+}
+
+/*Texte paragraphe carte 
+.pra p{
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+
+/*--Carte AGENT--*/
+/*titre carte 
+h5{
+	color: #f685c9;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* Carte Agent + bouton + hoover 
+.card .buttonA{
+	background-color:#f685c9;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonA:hover{
+	background-color: transparent;
+	border: 2px solid #f685c9;
+	cursor: pointer;
+}
+
+
+/*--Carte AEROPORT--*/
+/*titre carte 
+h6{
+	color: #747ceb;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+/* Carte Aeroport + bouton + hoover 
+.card .buttonE{
+	background-color:#747ceb;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonE:hover{
+	background-color: transparent;
+	border: 2px solid #747ceb;
+	cursor: pointer;
+}
+
+/*--Carte MANUTENTION--*/
+/*titre carte 
+h7{
+	font-weight: bold;
+	color: #0a72af;
+	font-size: 23px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+/* Carte Manutention + bouton + hoover 
+.card .buttonM{
+	background-color:#0a72af;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .buttonM:hover{
+	background-color: transparent;
+	border: 2px solid #0a72af;
+	cursor: pointer;
+}
+/*--------------------------------------------------*/
+
+
+
+/*----------CONTACT ACCUEIL---------- */
+/*mise en page box Contact */
+.contactAfA{
+	width: 100%;
+	height: 200px;
+	background: #292929;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+/*+ texte + bouton */
+.contactAfA p{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+/*bouton 'contactez-nous' */
+.contactAfA .button-two{
+	background-color:#585858;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+
+/*hoover encadré bouton*/
+.contactAfA .button-two:hover{
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+}
+/*----------------------------------------*/
+
+
+
+/*----------FOOTER ACCUEIL----------*/
+/*Mise en page footer */
+.footerAfA{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background: #181818;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Mise en forme titre footer*/
+.footerAfA p:nth-child(1){
+	font-size: 30px;
+	color: rgb(139, 139, 139);
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+/*texte footer */
+.footerAfA p:nth-child(1){
+	color: rgba(34, 151, 180, 0.863);
+}
+
+.footerAfA p:nth-child(2){
+	color: rgba(163, 219, 233, 0.685);
+	font-size: 17px;
+	width: 500px;
+	text-align: center;
+	line-height: 26px;
+}
+
+/* logo RS*/
+.socialAfA{
+	display: flex;
+}
+.socialAfA a{
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  rgba(41, 189, 226, 0.685);
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+/*zoom hoover */
+.socialAfA a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+}
+
+/*copyright*/
+.endAfA{
+	position: absolute;
+	color:#666666;
+	bottom: 35px;
+	font-size: 14px; 
+}
+/*--------------------------------------------------*/
+/*_______________________________________________________*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*___________________________________________________________*/
+/*___________________________________________________________*/
+/*___________________________________________________________*/
+
+/*espacement barre menu haut TEMPLATE
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px  10px;
+}
+/*mise en forme barre menu TEMPLATE 
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+/*hover barre menu TEMPLATE 
+nav ul li a:hover{
+	color: rgb(178,30,37);
+	transition: .4s;
+}
+
+/*prénom TEMPLATE
 h1{
 	color: rgb(255, 255, 255);
 	margin: 20px 0px 20px;
 	font-size: 75px;
 }
 
-/*Il n'y a pas de H3 pour l'instant je crois */
+/*Il n'y a pas de H3 pour l'instant je crois TEMPLATE
 h3{
 	color: rgb(164, 9, 236);
 	font-size: 25px;
 	margin-bottom: 50px;
 }
 
-/*mise en forme H4 "bonjour"*/
+/*mise en forme H4 "bonjour" TEMPLATE
 h4{
 	color: rgb(255, 255, 255);
 	letter-spacing: 2px;
 	font-size: 30px;
 }
 
-/*je sais pas encore ça sert à quoi ? JE CROIS QUE JAI SUPP LE HTML CETAIT PAS UTILE POUR NOUS */
+/*je sais pas encore ça sert à quoi ? JE CROIS QUE JAI SUPP LE HTML CETAIT PAS UTILE POUR NOUS 
 .newslatter form{
 	width: 380px;
 	max-width: 100%;
 	position: relative;
 }
 
-/*ça non plus*/
+/*ça non plus TEMPLATE
 .newslatter form input:first-child{
 	display: inline-block;
 	width: 100%;
@@ -138,20 +1239,22 @@ h4{
 	top: 6px;
 	right: 6px; 
 }
+/*___________________________________________________________*/
 
-/*_____________A PROPOS___________ */
-/*mise en forme */
+
+/*______________________A PROPOS____________________ TEMPLATE*/
+/*mise en forme 
 .about{
 	width: 100%;
 	padding: 100px 0px;
 	background-color: #191919;
 }
-/*image "A propos" */
+/*image "A propos" 
 .about img{
 	height: auto;
 	width: 430px;
 }
-/*texte */
+/*texte 
 .about-text{
 	width: 550px;
 }
@@ -164,15 +1267,15 @@ h4{
 	align-items: center;
 	justify-content: space-around;
 }
-/*titre de "A propos" */
+/*titre de "A propos" 
 .about-text h2{
-	color: white;
+	color: rgb(255, 255, 255);
 	font-size: 75px;
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
 
-/*sous titre "aeroport"*/
+/*sous titre "aeroport"
 .about-text h5{
 	color: rgb(178,30,37);
 	letter-spacing: 2px;
@@ -180,7 +1283,7 @@ h4{
 	margin-bottom: 25px;
 	text-transform: capitalize;
 }
-/*mise en forme texte "A propos" */
+/*mise en forme texte "A propos" 
 .about-text p{
 	color: rgb(185, 184, 184);
 	letter-spacing: 1px;
@@ -188,7 +1291,7 @@ h4{
 	font-size: 18px;
 	margin-bottom: 45px;
 }
-/*mise en forme bouton */
+/*mise en forme bouton 'EN SAVOIR PLUS'
 button{
 	background-color:rgb(178,30,37);
 	color: white;
@@ -199,187 +1302,30 @@ button{
 	border-radius: 30px;
 	transition: .4s; 
 }
-/*hover encadré bouton */
+/*hover encadré bouton 
 button:hover{
 	background-color: transparent;
 	border: 2px solid #ffffff;
 	cursor: pointer;
 }
+/*___________________________________________________________*/
 
-
-/*_____________SERVICES___________ */
+/*______________________SERVICE____________________ TEMPLATE
 
 .service{
-	background: #101010;
+	background: #1605b1;
 	width: 100%;
 	padding: 100px 0px;
 }
-/* titre service*/
+/*___________________________________________________________*/
+
+
+
+/* titre option TEMPLATE
 .title h2{
 	color: rgb(255, 255, 255);
 	font-size: 75px;
 	width: 1130px;
 	margin: 30px auto;
 	text-align: center;
-}
-
-/* mise en forme carré + carte*/
-.box{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 400px;
-}
-
-.card{
-	height: 365px;
-	width: 335px;
-	padding: 20px 35px;
-	background: #191919;
-	border-radius: 20px;
-	margin: 15px;
-	position: relative;
-	overflow: hidden;
-	text-align: center;
-}
-
-/*emoticone*/
-.card i{
-	font-size: 50px;
-	display: block;
-	text-align: center;
-	margin: 25px 0px;
-	color: rgb(178,30,37);
-}
-/*titre carte */
-h5{
-	color: rgb(255, 255, 255);
-	font-size: 23px;
-	margin-bottom: 15px;
-	text-align: center;
-}
-
-/*Texte paragraphe carte service */
-.pra p{
-	color: rgba(255, 255, 255, 0.8);
-	font-size: 16px;
-	line-height: 27px;
-	margin-bottom: 25px;
-}
-/*Boutons des services*/
-.card .button{
-	background-color:#6e6e6e;
-	color: white;
-	text-decoration: none;
-	border: 2px solid transparent;
-	font-weight: bold;
-	padding: 9px 22px;
-	border-radius: 30px;
-	transition: .4s; 
-}
-.card .button:hover{
-	background-color: transparent;
-	border: 2px solid #c0c0c0;
-	cursor: pointer;
-}
-
-
-/*_____________WEBSITE___________ */
-
-/*mise en page beautiful website */
-.contact-me{
-	width: 100%;
-	height: 290px;
-	background: #191919;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-}
-/*+ texte + bouton */
-.contact-me p{
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	margin-bottom: 25px;
-}
-
-/*bouton hire me */
-.contact-me .button-two{
-	background-color:#f9000c;
-	color: white;
-	text-decoration: none;
-	border: 2px solid transparent;
-	font-weight: bold;
-	padding: 13px 30px;
-	border-radius: 30px;
-	transition: .4s; 
-}
-
-/*hoover encadré bouton*/
-.contact-me .button-two:hover{
-	background-color: transparent;
-	border: 2px solid #ffffff;
-	cursor: pointer;
-}
-
-/*_____________FOOTER___________ */
-/*Mise en page footer */
-footer{
-	position: relative;
-	width: 100%;
-	height: 400px;
-	background: #101010;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-/*Mise en forme titre footer*/
-footer p:nth-child(1){
-	font-size: 30px;
-	color: rgb(139, 139, 139);
-	margin-bottom: 20px;
-	font-weight: bold;
-}
-
-/*texte footer */
-footer p:nth-child(2){
-	color: rgb(255, 255, 255);
-	font-size: 17px;
-	width: 500px;
-	text-align: center;
-	line-height: 26px;
-}
-
-/* logo RS*/
-.social{
-	display: flex;
-}
-.social a{
-	width: 45px;
-	height: 45px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background:  rgb(178,30,37);
-	border-radius: 50%;
-	margin: 22px 10px;
-	color: white;
-	text-decoration: none;
-	font-size: 20px;
-}
-
-/*zoom hoover */
-.social a:hover{
-	transform: scale(1.3);
-	transition: .3s;
-}
-/*copyright*/
-.end{
-	position: absolute;
-	color:#d8d8d8;
-	bottom: 35px;
-	font-size: 14px; 
 }
