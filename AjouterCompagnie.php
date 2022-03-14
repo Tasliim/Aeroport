@@ -95,7 +95,6 @@ require_once "connect.php";
                         <input type="submit" value="OK" />
                     </form>
         </div>
-    
         <br /><br />
 
     <a href=SupprimerCompagnie.php>Supprimer une nouvelle compagnie aérienne</a>

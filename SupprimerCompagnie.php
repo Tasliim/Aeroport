@@ -67,7 +67,7 @@ require_once "connect.php";
         // On récupère l'ID de la compagnie ajoutée 
 
         echo "Compagnie aérienne $id_compagnie  a bien été supprimée";
-    }else{
+      }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
 }
@@ -81,12 +81,12 @@ require_once "connect.php";
                         <input type="submit" value="OK" />
                     </form>
         </div>
-    
-        <br /><br />
+    <br /><br />
 
     <a href=AjouterCompagnie.php>Ajouter une nouvelle compagnie aérienne</a>
     <a href=AfficherCompagnie.php>Afficher les compagnies aériennes existantes</a>
     <br/><br/>
+
 </body>
 
 </html>
