@@ -38,8 +38,7 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["n_avion"],
-        $_POST["id_piste"], 
+        isset(
         $_POST["nombre_places"], 
         $_POST["type_avion"], 
         $_POST["capacite_chargement"], 
@@ -47,8 +46,6 @@ if(!empty($_POST)){
         $_POST["envergure"], 
         $_POST["longueur"], 
         $_POST["hauteur"])
-        && !empty($_POST["n_avion"]) 
-        && !empty($_POST["id_piste"]) 
         && !empty($_POST["nombre_places"]) 
         && !empty($_POST["type_avion"]) 
         && !empty($_POST["capacite_chargement"]) 
@@ -63,8 +60,6 @@ if(!empty($_POST)){
         // On retire toutes balises du type_avion
         $type_avion=strip_tags($_POST["type_avion"]);
         // On déclare les autres valeurs pour simplifié directement 
-        $n_avion=$_POST["n_avion"];
-        $id_piste=$_POST["id_piste"];
         $nombre_places=$_POST["nombre_places"];
         $type_avion=$_POST["type_avion"];
         $capacite_chargement=$_POST["capacite_chargement"];
@@ -79,8 +74,8 @@ if(!empty($_POST)){
 require_once "connect.php";
 
         // On déclare notre requête 
-        $sql="INSERT INTO avion 
-        VALUES (:n_avion, :id_piste, :nombre_places, :type_avion,
+        $sql="INSERT INTO avion (nombre_places, type_avion, capacite_chargement, capacite_reservoir, envergure, longueur, hauteur)
+        VALUES (:nombre_places, :type_avion,
                 :capacite_chargement, :capacite_reservoir, :envergure, 
                 :longueur, :hauteur)";
 
@@ -88,8 +83,6 @@ require_once "connect.php";
         $query=$db->prepare($sql);
 
         // On injecte les valeurs 
-        $query->bindValue(":n_avion", $n_avion);
-        $query->bindValue(":id_piste", $id_piste);
         $query->bindValue(":nombre_places", $nombre_places);
         $query->bindValue(":type_avion", $type_avion);
         $query->bindValue(":capacite_chargement", $capacite_chargement);
@@ -106,7 +99,7 @@ require_once "connect.php";
 
         // On récupère le numéro de l'avion ajouté
 
-        echo "Avion ajouté sous le numéro $n_avion";
+        echo "Avion ajouté";
     }else{
         die("Le formulaire n'a pas été rempli correctement");
     }
@@ -117,8 +110,6 @@ require_once "connect.php";
 
         <div class="AjouterAvi">
                     <form method="post" action="">
-                        <input type="number" name="n_avion" placeholder="n_avion" /><br />
-                        <input type="number" name="id_piste" placeholder="id_piste" /><br />
                         <input type="number" name="nombre_places" placeholder="nombre_places" /><br />
                         <input type="text" name="type_avion" placeholder="type_avion" /><br />
                         <input type="number" name="capacite_chargement" placeholder="capacite_chargement" /><br />
