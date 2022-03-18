@@ -84,8 +84,8 @@ require_once "connect.php";
 
         <br /><br />
 
-    <a href=AjouterVol.php>Ajouter un nouveau vol</a>
-    <a href=AfficherVol.php>Afficher les vols existants</a>
+    <a href=AjouterAvion.php>Ajouter un nouvel avion</a>
+    <a href=AfficherAvion.php>Afficher les avions existants</a>
     <br/><br/>
 
 </body>
