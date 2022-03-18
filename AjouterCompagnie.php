@@ -38,9 +38,11 @@
 if(!empty($_POST)){
     // POST n'est pas vide, alors on vérifie que toutes les données sont bien présentes 
     if(
-        isset($_POST["id_compagnie"],
+        isset(
+        $_POST["id_compagnie"],
         $_POST["nom_compagnie"], 
-        $_POST["n_siret"])
+        $_POST["n_siret"]
+        )
         && !empty($_POST["id_compagnie"]) 
         && !empty($_POST["nom_compagnie"]) 
         && !empty($_POST["n_siret"])
@@ -51,6 +53,7 @@ if(!empty($_POST)){
         $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
         // On déclare les autres valeurs pour simplifié directement 
         $id_compagnie=$_POST["id_compagnie"];
+        $nom_compagnie=$_POST["nom_compagnie"];
         $n_siret=$_POST["n_siret"];
         
         // A présent on peut se permettre de se connecter à la base de données
@@ -60,7 +63,7 @@ require_once "connect.php";
 
         // On déclare notre requête 
         $sql="INSERT INTO compagnie_aerienne
-        VALUES (:id_compagnie, :nom_compagnie, :n_siret)";
+        VALUES (:id_compagnie, :nom_compagnie, :n_siret)"; // Rajouter code_compagnie
 
         // On prépare la requête 
         $query=$db->prepare($sql);
