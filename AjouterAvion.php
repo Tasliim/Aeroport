@@ -124,7 +124,7 @@ require_once "connect.php";
         <br /><br />
 
     <a href=SupprimerAvion.php>Supprimer un avion existant</a>
-    <a href=AfficherVol.php>Afficher les vols existants</a>
+    <a href=AfficherAvion.php>Afficher les avions existants</a>
     <br/><br/>
 
 </body>

@@ -41,20 +41,25 @@ if(!empty($_POST)){
         isset(
         $_POST["id_compagnie"],
         $_POST["nom_compagnie"], 
+        $_POST["code_compagnie"],
         $_POST["n_siret"]
         )
         && !empty($_POST["id_compagnie"]) 
         && !empty($_POST["nom_compagnie"]) 
+        && !empty($_POST["code_compagnie"])
         && !empty($_POST["n_siret"])
     ){
         // Le formulaire est complet
         // On récupère les données en les protégeants contre les failles XSS
-        // On retire toutes balises du nom_compagnie 
+        // On retire toutes balises du nom_compagnie et code_compagnie
         $nom_compagnie=strip_tags($_POST["nom_compagnie"]);
+        $code_compagnie=strip_tags($_POST["code_compagnie"]);
         // On déclare les autres valeurs pour simplifié directement 
         $id_compagnie=$_POST["id_compagnie"];
         $nom_compagnie=$_POST["nom_compagnie"];
+        $code_compagnie=$_POST["code_compagnie"];
         $n_siret=$_POST["n_siret"];
+
         
         // A présent on peut se permettre de se connecter à la base de données
         // On se connecte donc à la BDD
@@ -63,7 +68,7 @@ require_once "connect.php";
 
         // On déclare notre requête 
         $sql="INSERT INTO compagnie_aerienne
-        VALUES (:id_compagnie, :nom_compagnie, :n_siret)"; // Rajouter code_compagnie
+        VALUES (:id_compagnie, :nom_compagnie, :n_siret, :code_compagnie)";
 
         // On prépare la requête 
         $query=$db->prepare($sql);
@@ -71,7 +76,9 @@ require_once "connect.php";
         // On injecte les valeurs 
         $query->bindValue(":id_compagnie", $id_compagnie);
         $query->bindValue(":nom_compagnie", $nom_compagnie);
+        $query->bindValue(":code_compagnie", $code_compagnie);
         $query->bindValue(":n_siret", $n_siret);
+
 
         // On execute la requête 
         if(
@@ -94,6 +101,7 @@ require_once "connect.php";
                     <form method="post" action="">
                         <input type="number" name="id_compagnie" placeholder="id_compagnie" /><br />
                         <input type="text" name="nom_compagnie" placeholder="nom_compagnie" /><br />
+                        <input type="text" name="code_compagnie" placeholder="code_compagnie" /><br />
                         <input type="number" name="n_siret" placeholder="n_siret" /><br />
                         <input type="submit" value="OK" />
                     </form>
