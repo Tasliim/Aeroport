@@ -51,7 +51,7 @@ require_once "connect.php";
 // On écrit la requête 
 $sql="SELECT * FROM compagnie_aerienne ORDER BY id_compagnie ASC";
 
-// On execute la requête directement car pas de paramètres extérieurs qui vient s'ajouter 
+// On execute la requête directement car pas de paramètres extérieurs qui viennent s'ajouter 
 $query=$db->query($sql);
 
 // On récupère les données 
@@ -69,9 +69,10 @@ echo '<table class="table table-striped">';
 
 echo 
 '<tr style=font-weight:bold>
-<td>id Compagnie</td>
-<td>Nom Compagnie</td>
-<td>num de siret
+<td>id</td>
+<td>Nom de la compagnie aérienne</td>
+<td>Code de la compagnie aérienne</td>
+<td>Numéro de siret<td>
 </tr>';
 
 // Après un fetchall il y a une boucle, on utilise donc une boucle for each
@@ -79,6 +80,7 @@ foreach ($compagnie_aerienne as $compagnie_aerienne) {
     echo'<tr>';
     echo '<td>'.$compagnie_aerienne->id_compagnie.'</td>';
     echo '<td>'.$compagnie_aerienne->nom_compagnie.'</td>';
+	echo '<td>'.$compagnie_aerienne->code_compagnie.'</td>';
     echo '<td>'.$compagnie_aerienne->n_siret.'</td>';
     echo'</tr>';
 }
